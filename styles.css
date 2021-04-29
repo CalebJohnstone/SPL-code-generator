@@ -1,0 +1,14 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+#buttons{
+    float: left;
+}
+
+#inputFileText{
+    right: 0;
+    float: right;
+    tab-size: 4;
+}

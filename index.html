@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<head>
+    <title>COS 341 - Code Generator</title>
+    <link rel='stylesheet' href='styles.css'>
+    <script type="text/javascript" src="jquery-min.js"></script>
+</head>
+<html>   
+    <body>
+        <form name="pracForm" action="action_page.php" method="POST" enctype="multipart/form-data">
+        <div id="buttons">
+        <button type="submit"><b>Submit Code</b></button>&nbsp;<button type="button" onclick='clearText()'><b>Clear Program</b></button>&nbsp;<input id="lastLine" type="checkbox">last line in block<br><br>
+        <button type="button" onclick='proc()'>proc ID{PROG}</button>&nbsp;<input id="procName" type="text" style="width: 100px"><br>
+        <button type="button" onclick='halt()'>halt</button><br>
+        <button type="button" onclick='input()'>input(VAR)</button>&nbsp;<input id="inputVAR" type="text" style="width: 100px"><br>
+        <button type="button" onclick='output()'>output(VAR)</button>&nbsp;<input id="outputVAR" type="text" style="width: 100px"><br>
+        <button type="button" onclick='call()'>CALL ID</button>&nbsp;<input id="callID" type="text" style="width: 100px"><br>
+        <button type="button" onclick='assign()'>VAR = VALUE</button>&nbsp;<input id="VAR" type="text" style="width: 100px">&nbsp;<input id="VALUE" type="text" style="width: 100px"><br>
+        <button type="button" onclick='add()'>add(x,x)</button>&nbsp;<input id="add1" type="text" style="width: 100px">&nbsp;<input id="add2" type="text" style="width: 100px"><br>
+        <button type="button" onclick='sub()'>sub(x,x)</button>&nbsp;<input id="sub1" type="text" style="width: 100px">&nbsp;<input id="sub2" type="text" style="width: 100px"><br>
+        <button type="button" onclick='mult()'>mult(x,x)</button>&nbsp;<input id="mult1" type="text" style="width: 100px">&nbsp;<input id="mult2" type="text" style="width: 100px"><br>
+        <button type="button" onclick='ifStatement()'>if(BOOL)then{CODE}</button>&nbsp;<input id="ifBOOL" type="text" style="width: 100px"><br>
+        <button type="button" onclick='ifElseStatement()'>if(BOOL)then{CODE}else{CODE}</button>&nbsp;<input id="ifElseBOOL" type="text" style="width: 100px"><br>
+        <button type="button" onclick='eq()'>eq(x,x)</button>&nbsp;<input id="eq1" type="text" style="width: 100px">&nbsp;<input id="eq2" type="text" style="width: 100px"><br>
+        <button type="button" onclick='varLessThan()'>(VAR < VAR)</button>&nbsp;<input id="varLessThan1" type="text" style="width: 100px">&nbsp;<input id="varLessThan2" type="text" style="width: 100px"><br>
+        <button type="button" onclick='varGreaterThan()'>(VAR > VAR)</button>&nbsp;<input id="varGreaterThan1" type="text" style="width: 100px">&nbsp;<input id="varGreaterThan2" type="text" style="width: 100px"><br>
+        <button type="button" onclick='not()'>not BOOL</button>&nbsp;<input id="notBOOL" type="text" style="width: 100px"><br>
+        <button type="button" onclick='and()'>and(BOOL,BOOL)</button>&nbsp;<input id="and1" type="text" style="width: 100px">&nbsp;<input id="and2" type="text" style="width: 100px"><br>
+        <button type="button" onclick='or()'>or(BOOL,BOOL)</button>&nbsp;<input id="or1" type="text" style="width: 100px">&nbsp;<input id="or2" type="text" style="width: 100px"><br>
+        <button type="button" onclick='whileLoop()'>while(BOOL){CODE}</button>&nbsp;<input id="whileBOOL" type="text" style="width: 100px"><br>
+        <button type="button" onclick='forLoop()'>for(VAR=0; VAR < VAR; VAR = add(VAR, 1)){CODE}</button><br>
+        <input id="forVAR1" type="text" style="width: 100px">&nbsp;<input id="forVAR2" type="text" style="width: 100px"><br>
+        </div>
+        
+      <textarea id="inputFileText" style="height: 650px; width: 60%;" name="inputFileText"></textarea>
+    </body>    
+
+    <script src="generator.js"></script>
+</html>
