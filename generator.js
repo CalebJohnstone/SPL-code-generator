@@ -4,6 +4,9 @@ function write(insertText){//TODO: cursor moves weirdly when auto print code and
     var textBefore = v.substring(0, cursorPos);
     var textAfter  = v.substring(cursorPos, v.length);
     $('#inputFileText').val(textBefore + insertText + textAfter);
+
+    //replace all tabs with spaces
+    $('#inputFileText').val($('#inputFileText').val().replace('\t', ' '));
 }
 
 function clearText(){
@@ -16,7 +19,7 @@ function halt(){
 }
 
 function proc(){
-    write("proc " + document.getElementById("procName").value + "{\n\t\n}");
+    write("proc " + document.getElementById("procName").value + "{\n \n}");
     semiColon();
 }
 
@@ -58,12 +61,12 @@ function mult(){
 }
 
 function ifStatement(){
-    write('if(' + document.getElementById("ifBOOL").value + ')then{\n\t\n}');//TODO: correct indentation
+    write('if(' + document.getElementById("ifBOOL").value + ')then{\n \n}');//TODO: correct indentation
     semiColon();
 }
 
 function ifElseStatement(){
-    write('if(' + document.getElementById("ifElseBOOL").value + ')then{\n\t\n}else{\n\t\n}');//TODO: correct indentation
+    write('if(' + document.getElementById("ifElseBOOL").value + ')then{\n \n}else{\n \n}');//TODO: correct indentation
     semiColon();
 }
 
@@ -127,7 +130,7 @@ document.getElementById('inputFileText').addEventListener('keydown', function(e)
   
       // set textarea value to: text before caret + tab + text after caret
       this.value = this.value.substring(0, start) +
-        "\t" + this.value.substring(end);
+        " " + this.value.substring(end);
   
       // put caret at right position again
       this.selectionStart =
@@ -138,7 +141,7 @@ document.getElementById('inputFileText').addEventListener('keydown', function(e)
 document.getElementById('inputFileText').addEventListener('keydown', function(e) {
     if (e.key == 'Enter') {
         //do not have to remember to put in semi-colons
-        if(this.value.charAt(this.value.length-1) !== "{" && this.value.charAt(this.value.length-1) !== '\t' && !document.getElementById("lastLine").checked){
+        if(this.value.charAt(this.value.length-1) !== "{" && this.value.charAt(this.value.length-1) !== ' ' && !document.getElementById("lastLine").checked){
             write(";");
         }
 
@@ -146,19 +149,19 @@ document.getElementById('inputFileText').addEventListener('keydown', function(e)
 
         //count the number of tabs to get the next line to have the correct indentation
         var i=0;
-        for(; i<currentLine.length && currentLine.charAt(i) === '\t'; ++i);
+        for(; i<currentLine.length && currentLine.charAt(i) === ' '; ++i);
         console.log(currentLine);
         console.log('tabs: ' + i);
 
         if(this.value.charAt(this.value.length-1) === "{"){
             ++i;
-        }else if(document.getElementById("lastLine").checked){
+        }else if(document.getElementById("lastLine").checked && i >= 1){
             --i;
         }
 
         //output the indentation for the next line of code
         setTimeout(function(){
-            $('#inputFileText').val($('#inputFileText').val()+'\t'.repeat(i) + (document.getElementById("lastLine").checked ? '}' : ''));
+            $('#inputFileText').val($('#inputFileText').val()+' '.repeat(i) + (document.getElementById("lastLine").checked ? '}' : ''));
         }, 200);
     }
   });
