@@ -3,7 +3,7 @@ Web page interface to generate segments of SPL code, to speed up the creation of
 
 Google Drive of helpful resources (my link, not my actual drive I use, which is also on the main COS WhatsApp group): https://drive.google.com/drive/folders/12ajkm9PwQ0QVw02XkXzqF34gfuoRd06y?usp=sharing
 
-Feel free to fork and make your own improvements. This initial version works but improvements can be made to make the interaction smoother and common oeprations such as subtraction by 1 (eg: x = x - 1) can be added as buttons. If you figure out some interesting additional features, let me know :)
+Feel free to fork and make your own improvements. This initial version works but improvements can be made to make the interaction smoother and common operations such as subtraction by 1 (eg: x = x - 1) can be added as buttons. If you figure out some interesting additional features, let me know :)
 
 Example of usage: (I can maybe record myself doing this)
 
@@ -86,5 +86,3 @@ if(eq(a,b))then{
 If anything is unclear, try fiddle with it to see how it works.
 
 Hope this helps to speed up your test case making to find those pesky bugs we all love.
-
-P.S: do not use tabs, replace that with spaces
