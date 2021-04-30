@@ -1,4 +1,4 @@
-# SPL-code-generator
+# SPL-code-generator for 2021
 Web page interface to generate segments of SPL code, to speed up the creation of test files for the COS 341: Compiler Construction practicals
 
 Google Drive of helpful resources (my link, not my actual drive I use, which is also on the main COS WhatsApp group): https://drive.google.com/drive/folders/12ajkm9PwQ0QVw02XkXzqF34gfuoRd06y?usp=sharing
