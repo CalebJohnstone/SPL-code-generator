@@ -58,12 +58,12 @@ function mult(){
 }
 
 function ifStatement(){
-    write('if(' + document.getElementById("ifBOOL").value + '){\n\t\n}');//TODO: correct indentation
+    write('if(' + document.getElementById("ifBOOL").value + ')then{\n\t\n}');//TODO: correct indentation
     semiColon();
 }
 
 function ifElseStatement(){
-    write('if(' + document.getElementById("ifElseBOOL").value + '){\n\t\n}else{\n\t\n}');//TODO: correct indentation
+    write('if(' + document.getElementById("ifElseBOOL").value + ')then{\n\t\n}else{\n\t\n}');//TODO: correct indentation
     semiColon();
 }
 
